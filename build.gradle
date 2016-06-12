@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'spark-basic-structure'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "app.Application"
+
+repositories {
+     jcenter()
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'com.sparkjava', name: 'spark-core', version:'2.5'
+    compile group: 'com.sparkjava', name: 'spark-debug-tools', version:'0.5'
+    compile group: 'com.sparkjava', name: 'spark-template-velocity', version:'2.3'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version:'1.7.13'
+    compile group: 'org.projectlombok', name: 'lombok', version:'1.16.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version:'2.5.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.5.1'
+    compile group: 'com.google.guava', name: 'guava', version:'19.0'
+    compile group: 'org.mindrot', name: 'jbcrypt', version:'0.3m'
+}
