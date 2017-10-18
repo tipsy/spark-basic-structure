@@ -111,6 +111,11 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.3m</version>
         </dependency>
+        <dependency>
+	   <groupId>com.heroku.sdk</groupId>
+       <artifactId>heroku-maven-plugin</artifactId>
+       <version>1.2.2</version>
+    </dependency>
     </dependencies>
 <repositories>
     <repository>
