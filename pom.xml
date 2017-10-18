@@ -28,6 +28,18 @@
                     </arguments>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>1.2.2</version>
+                <configuration>
+                    <jdkVersion>1.8</jdkVersion>
+                    <appName>spark-pbesze</appName>
+                    <processTypes>
+                        <web>java -jar ./target/spark-basic-structure-1.0.BUILD-SNAPSHOT-jar-with-dependencies.jar</web>                        				
+                    </processTypes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
