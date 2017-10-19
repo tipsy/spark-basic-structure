@@ -21,7 +21,7 @@ public class Application {
         userDao = new UserDao();
 
         // Configure Spark
-        port(4567);
+        port(getHerokuAssignedPort());
         staticFiles.location("/public");
         staticFiles.expireTime(600L);
         enableDebugScreen();
@@ -37,11 +37,19 @@ public class Application {
         get(Path.Web.LOGIN,          LoginController.serveLoginPage);
         post(Path.Web.LOGIN,         LoginController.handleLoginPost);
         post(Path.Web.LOGOUT,        LoginController.handleLogoutPost);
+        get(Path.Web.HOME,          IndexController.serveIndexPage);
         get("*",                     ViewUtil.notFound);
 
         //Set up after-filters (called after each get/post)
         after("*",                   Filters.addGzipHeader);
 
     }
+            static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        }
 
 }
