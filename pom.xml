@@ -60,7 +60,7 @@
                     <appName>spark-pbesze</appName> -->
                     <includes>
 			<include>target/spark-basic-structure-1.0.BUILD-SNAPSHOT.jar</include>
-                       	<include>target/spark-basic-structure-1.0.BUILD-SNAPSHOT-jar-with-dependencies.jar</include>
+                       <!--  	<include>target/spark-basic-structure-1.0.BUILD-SNAPSHOT-jar-with-dependencies.jar</include>-->
                      </includes>
                     <processTypes>
                         <web>java -jar ./target/spark-basic-structure-1.0.BUILD-SNAPSHOT.jar </web>                        				
