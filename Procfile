@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* app.Application
+web: java $JAVA_OPTS -jar target/spark-pbesze-0.1.0.BUILD-SNAPSHOT-jar-with-dependencies.jar
