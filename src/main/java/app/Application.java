@@ -37,6 +37,7 @@ public class Application {
         get(Path.Web.LOGIN,          LoginController.serveLoginPage);
         post(Path.Web.LOGIN,         LoginController.handleLoginPost);
         post(Path.Web.LOGOUT,        LoginController.handleLogoutPost);
+        get("",                      IndexController.serveIndexPage);
         get("*",                     ViewUtil.notFound);
 
         //Set up after-filters (called after each get/post)
